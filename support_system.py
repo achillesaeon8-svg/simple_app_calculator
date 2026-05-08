@@ -1,13 +1,15 @@
-class SmartEntry:
+class ConversionRates:
   @staticmethod
-  def refine_input(user_text):
-    return user_text.replace('++', '+').replace('--', '-').replace('xx', '*')
+  def perform_conversion(app, key):
+    try:
+      value_string = app.main_display.get()
+      value = float(value_string)
 
-class FactionModification:
-  @staticmethod
-  def to_fraction_format (nnumeric_value):
-    from fractions import Fraction
-    return str(Fraction(nnumeric_value).limit_denominator())
-  
-class DecimalModification:
-  pass
+      rates = {
+        '$→₱': 58.45, '₱→$': 0.017, 
+        'KRW→₱': 0.042, '₱→KRW': 23.81, 
+        '¥→₱': 0.37, '₱→¥': 2.70,
+        '€→₱': 63.12, '₱→€': 0.015,
+
+        
+      }
