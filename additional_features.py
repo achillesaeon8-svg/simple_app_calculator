@@ -1,3 +1,5 @@
+import random
+
 class DailyQuotes:
   @staticmethod
   def get_random_quote():
@@ -110,7 +112,8 @@ class DailyQuotes:
       'Life is what happens when you\'re busy making other plans.',
       'Man is born free, and everywhere he is in chains.',
     ]
-
+    return random.choice(quote_list)
+  
 class MultiColor:
   pass
 class SoundBoard:
