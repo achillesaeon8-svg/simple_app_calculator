@@ -1,12 +1,11 @@
 import tkinter as tkinter_library
-from tkinter import messagebox
 import math
 
 class FundamentalOperations(tkinter_library.Tk):
     def __init__(self, window_title='Aki Calculator', background_color='#2c3e50'):
         super().__init__()
         self.title(window_title)
-        self.geometry('350x550')
+        self.geometry('450x800')
         self.configure(background=background_color)
         
         self.main_display = tkinter_library.Entry(
