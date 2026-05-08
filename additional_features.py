@@ -77,6 +77,17 @@ class DailyQuotes:
       'I want to live!',
       'Thanks... for loving me!',
 
+      'The only thing we have to fear is fear itself.',
+      'I have a dream.',
+      'Spread love everywhere you go. Let no one ever come to you without leaving happier.',
+      'It always seems impossible until it\'s done.',
+      'The way to get started is to quit talking and begin doing.',
+      'Success is not final, failure is not fatal: it is the courage to continue that counts.',
+      'Be the change that you wish to see in the world.',
+      'The greatest glory in living lies not in never falling, but in rising every time we fall.',
+      'Your time is limited, so don\'t waste it living someone else\'s life.',
+      'I think, therefore I am.',
+      
     ]
 
 class MultiColor:
