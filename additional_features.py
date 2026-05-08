@@ -98,6 +98,17 @@ class DailyQuotes:
       'I have no house to go back to. In this world, the only place I can return to is you.',
       'Omae wa mou shindeiru.',
       'The world isn\'t perfect. But it\'s there for us, doing the best it can.',
+    
+      'An eye for an eye makes the whole world blind.',
+      'When the power of love overcomes the love of power, the world will know peace.',
+      'The only true wisdom is in knowing you know nothing.',
+      'Happiness is not something ready-made. It comes from your own actions.',
+      'Out of the mountain of despair, a stone of hope.',
+      'To be, or not to be, that is the question.',
+      'Knowledge is power.',
+      'He who has a why to live can bear almost any how.',
+      'Life is what happens when you\'re busy making other plans.',
+      'Man is born free, and everywhere he is in chains.',
     ]
 
 class MultiColor:
