@@ -13,8 +13,8 @@ class FundamentalOperations(tkinter_library.Tk):
             self,
             font = ('Arial', 24),
             justify = 'right',
-            bd = 10,
-            bg = '#ecf0f1'
+            borderwidth = 10,
+            background = '#ecf0f1'
         )
         self.main_display.pack(fill='x', padx=10, pady=20)
     
