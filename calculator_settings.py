@@ -48,7 +48,7 @@ class FundamentalOperations(tkinter_library.Tk):
     def exit_sequence(self):
         for widget in self.winfo_children():
             widget.destroy()
-        bye_label = tkinter_library.Label(self, text='Thank you for using my calculator! BYEEE', font=('Arial', 24, 'bold'), background='#2c3e50', foreground='white')
+        bye_label = tkinter_library.Label(self, text='Thank you BYEEE', font=('Arial', 24, 'bold'), background='#2c3e50', foreground='white')
 
         bye_label.pack(expand=True)
         self.fade_exit(bye_label)
