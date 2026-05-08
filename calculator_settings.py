@@ -9,13 +9,9 @@ class FundamentalOperations(tkinter_library.Tk):
         self.configure(background=background_color)
         
         self.main_display = tkinter_library.Entry(
-            self,
-            font = ('Arial', 24),
-            justify = 'right',
-            borderwidth = 10,
-            background = '#ecf0f1'
+            self, font = ('Arial', 32), justify = 'right', borderwidth = 10, background = '#ecf0f1', relief='flat'
         )
-        self.main_display.pack(fill='x', padx=10, pady=20)
+        self.main_display.pack(fill='x', padx=15, pady=25)
     
     def execute_safe_calculation(self):
         try:
