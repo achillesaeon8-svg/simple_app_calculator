@@ -55,6 +55,16 @@ class DailyQuotes:
       'Take a chance and you may lose. Take no chance and you have already lost!',
       'The more wonderful the soul, the more it will sparkle.',
 
+      'Nothing in life is to be feared, it is only to be understood.',
+      'Imagination is more important than knowledge.',
+      'If I have seen further it is by standing on the shoulders of Giants.',
+      'Equipped with his five senses, man explores the universe around him and calls the adventure Science.',
+      'Somewhere, something incredible is waiting to be known.',
+      'Science is not only a disciple of reason but, also, one of romance and passion.',
+      'In science, there are no shortcuts to the truth.',
+      'The good thing about science is that it\'s true whether or not you believe in it.',
+      'A man who dares to waste one hour of time has not discovered the value of life.',
+      'Science knows no country, because knowledge belongs to humanity.',
     ]
 
 class MultiColor:
