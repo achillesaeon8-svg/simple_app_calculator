@@ -9,3 +9,9 @@ class FundamentalOperations(tkinter_library.TK):
         self.geometry('350x550')
         self.configure(background=background_color)
         
+        self.main_display = tkinter_library.Entry(self,
+        font = ('Arial', 24),
+        justify = 'right',
+        bd = 10
+        background = '#ecf0f1'
+    )
