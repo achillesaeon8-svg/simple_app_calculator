@@ -35,7 +35,7 @@ class CalculatorApp:
         elif key == "Back": 
             CalculatorUI.draw_basic_mode(self.app, self.handle_press)
         elif "→" in key:
-            eq, res = LogicEngine.perform_conversion(self.app, key)
+            eq, res = ConversionRates.perform_conversion(self.app, key)
             if eq != "Error": self.history_logs.append(f"{eq} -> {res}")
         else:
             self.app.main_display.insert(tkinter_library.END, key)
