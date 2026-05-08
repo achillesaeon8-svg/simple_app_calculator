@@ -8,5 +8,6 @@ class FactionModification:
   def to_fraction_format (nnumeric_value):
     from fractions import Fraction
     return str(Fraction(nnumeric_value).limit_denominator())
+  
 class DecimalModification:
   pass
