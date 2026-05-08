@@ -44,7 +44,17 @@ class DailyQuotes:
       'Be extremely subtle even to the point of formlessness.',
       'There is no greater danger than underestimating your opponent.',
 
-      
+      'I see now that the circumstances of one\'s birth are irrelevant. It is what you do with the gift of life that determines who you are.',
+      'To extend our reach to the stars above!',
+      'Strong Pokémon. Weak Pokémon. That is only the selfish perception of people.',
+      'I’m gonna be the world’s greatest Pokémon Master!',
+      'Even if we don\'t understand each other, that\'s not a reason to reject each other.',
+      'There are bad ways to win—and good ways to lose. What’s interesting and troubling is that it’s not always clear which is which.',
+      'A champion is a person who has dedicated themselves to their dream.',
+      'Pikachu, I choose you!',
+      'Take a chance and you may lose. Take no chance and you have already lost!',
+      'The more wonderful the soul, the more it will sparkle.',
+
     ]
 
 class MultiColor:
