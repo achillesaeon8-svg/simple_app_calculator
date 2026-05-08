@@ -87,7 +87,17 @@ class DailyQuotes:
       'The greatest glory in living lies not in never falling, but in rising every time we fall.',
       'Your time is limited, so don\'t waste it living someone else\'s life.',
       'I think, therefore I am.',
-      
+
+      'Whatever you lose, you\'ll find it again. But what you throw away you\'ll never get back.',
+      'I am the hope of the universe. I am the answer to all living things that cry out for peace.',
+      'Equivalent Exchange: To obtain something, something of equal value must be lost.',
+      'If you don\'t like your destiny, don\'t accept it. Instead, have the courage to change it.',
+      'Human beings are strong because we can change ourselves.',
+      'Fear is not evil. It tells you what your weakness is.',
+      'I’ll take a potato chip... AND EAT IT!',
+      'I have no house to go back to. In this world, the only place I can return to is you.',
+      'Omae wa mou shindeiru.',
+      'The world isn\'t perfect. But it\'s there for us, doing the best it can.',
     ]
 
 class MultiColor:
