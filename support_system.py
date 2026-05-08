@@ -20,3 +20,12 @@ class ConversionRates:
         'min→sec': 60, 'sec→min': 1/60,
         'day→hr': 24, 'hr→day': 1/24
       }
+
+      result = value * rates.get(key, 1)
+      formatted = f'{result:.4f}'.rstrip('0').rstrip('.')
+      app.main_display.delete(0, 'end')
+      app.main_display.insert(0, formmatted)
+      return f'{value_string} ({key})', formatted
+    except:
+      app.update_display('Error: Input Number')
+      return 'Error', 'ValueError'
