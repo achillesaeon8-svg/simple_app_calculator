@@ -38,3 +38,16 @@ def run_calculator_app():
         command=handle_calculation_process
     )
     solve_button.pack(pady=30)
+
+    def attempt_exit_or_reset():
+        user_choice = messagebox.askyesno('Aki Calculator', 'Do you want to perform another calculation?')
+        if user_choice:
+            active_calculator.main_display.delete(0, tkinter_library.END)
+        else:
+            print('Thank you for using my calculator! Program Exiting BYEEE...')
+
+    active_calculator.protocol('DELETE_WINDOW', attempt_exit_or_reset)
+    active_calculator.mainloop()
+
+if __name__ == '__main__':
+    run_calculator_app()
