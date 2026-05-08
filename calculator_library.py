@@ -11,7 +11,7 @@ class InputHistory:
     window = tkinter_library.Toplevel()
     window.title('Calculation Logs')
     window.geometry('300x400')
-    text_area = tkinter_library.Text(window, font='Arial', 12)
+    text_area = tkinter_library.Text(window, font=('Arial', 12))
     text_area.pack(expand=True. fill='both')
 
     if not self.logs:
