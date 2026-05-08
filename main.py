@@ -28,5 +28,13 @@ def run_calculator_app():
 
             history_string = f'{user_input} = {math_result}'
             session_history.save_to_library(history_string)
-
-        
+    
+    solve_button = tkinter_library.Button(
+        active_calculator,
+        text=15
+        width=2,
+        background='#3498db',
+        foreground='white',
+        command=handle_calculation_process
+    )
+    solve_button.pack(pady=30)
