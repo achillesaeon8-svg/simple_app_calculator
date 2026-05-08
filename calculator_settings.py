@@ -25,7 +25,7 @@ class FundamentalOperations(tkinter_library.Tk):
             expression = expression.replace('√', 'math.sqrt').replace('π', 'math.pi')
 
             result = eval(expression, {'__builtins__': None}, {'math': math})
-            formatted_result = f'{result:.8f}'.rsplit('0').rsplit('0') if insistance(result, float) else str(result)
+            formatted_result = f'{result:.8f}'.rsplit('0').rsplit('0') if isinstance(result, float) else str(result)
 
             self.main_display.delete(0, 'end')
             self.main_display.insert(0, formatted_result)
