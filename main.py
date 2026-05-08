@@ -15,4 +15,18 @@ def run_calculator_app():
         SoundBoard.trigger_click_sound()
 
         raw_input = active_calculator.main_display.get()
-        cleaned_input = Smart
+        cleaned_input = SmartEntry.refine_input(raw_input)
+
+        active_calculator.main_display.delete(0, tkinter_library.END)
+        active_calculator.main_display.insert(0, cleaned_input)
+
+        calculation_data = active_calculator.execute_safe_calculation()
+
+        if calculation_data[0] is not None:
+            user_input = calculation_data[0]
+            math_result = calculation_data[1]
+
+            history_string = f'{user_input} = {math_result}'
+            session_history.save_to_library(history_string)
+
+        
