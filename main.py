@@ -26,8 +26,8 @@ class CalculatorApp:
             self.app.main_display.delete(0, 'end')
 
         if key == "=":
-            eq, res = self.app.execute_safe_calculation()
-            if eq != "Error": self.history_logs.append(f"{eq} = {res}")
+            equation, result = self.app.execute_safe_calculation()
+            if equation != "Error": self.history_logs.append(f"{equation} = {result}")
         elif key == "C": 
             self.app.main_display.delete(0, 'end')
         elif key == "History": 
@@ -35,8 +35,8 @@ class CalculatorApp:
         elif key == "Back": 
             CalculatorUI.draw_basic_mode(self.app, self.handle_press)
         elif "→" in key:
-            eq, res = ConversionRates.perform_conversion(self.app, key)
-            if eq != "Error": self.history_logs.append(f"{eq} -> {res}")
+            equation, result = ConversionRates.perform_conversion(self.app, key)
+            if equation != "Error": self.history_logs.append(f"{equation} -> {result}")
         else:
             self.app.main_display.insert(tkinter_library.END, key)
 
