@@ -31,7 +31,7 @@ def run_calculator_app():
     
     solve_button = tkinter_library.Button(
         active_calculator,
-        text=15
+        text=15,
         width=2,
         background='#3498db',
         foreground='white',
