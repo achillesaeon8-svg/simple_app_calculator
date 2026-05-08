@@ -32,4 +32,13 @@ class FundamentalOperations(tkinter_library.Tk):
             return raw_value, formatted_result
         
         except ZeroDivisionError:
-            self
+            self.update_display('Error: Division by Zero')
+            return 'Error', 'Div0'
+        except ValueError:
+            self.update_display('Error: Math Domain')
+            return 'Error', 'Domain'
+        except Exception:
+            self.update_display('Error: Invalid Input')
+            return 'Error', 'Invalid'
+        
+    def
