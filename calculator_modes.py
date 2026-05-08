@@ -3,7 +3,7 @@ import tkinter as tkinter_library
 
 class CalculatorUI(FundamentalOperations):
   @staticmethod
-  def draw_full_grid(app, buttons, controller, columns=4, color='#34495e')
+  def draw_full_grid(app, buttons, controller, columns=4, color='#34495e'):
     for widget in app.button_frame.winfo_children():
       widget.destroy()
     for i in range(columns):

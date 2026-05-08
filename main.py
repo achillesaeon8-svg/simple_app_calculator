@@ -1,53 +1,74 @@
-from calculator_modes import AdvancedMath
-from additional_features import DailyQuotes, SoundBoard
-from calculator_library import InputHistory
-from support_system import SmartEntry
-from tkinter import messagebox
 import tkinter as tkinter_library
+from calculator_settings import FundamentalOperations
+from calculator_modes import CalculatorUI
+from additional_features import DailyQuotes
+from support_system import ConversionRates
 
-def run_calculator_app():
-    print(f'-----Welcome: {DailyQuotes.get_random_quote()} -----')
+class CalculatorApp:
+    def __init__(self):
+        self.app = FundamentalOperations()
+        self.history_logs = []
+        self.modes = ["Basic", "Advanced", "Units", "Currency", "Time"]
+        self.idx = 0
 
-    active_calculator = AdvancedMath()
-    session_history = InputHistory()
+        self.app.bind('<Return>', lambda e: self.handle_press("="))
+        self.app.bind('<Escape>', lambda e: self.handle_press("C"))
 
-    def handle_calculation_process():
-        SoundBoard.trigger_click_sound()
+        self.quote = tkinter_library.Label(self.app.button_frame, text=DailyQuotes.get_random_quote(), 
+                                         font=("Arial", 16, "italic"), bg="#2c3e50", fg="white")
+        self.quote.pack(expand=True)
+        self.app.after(1500, lambda: self.app.fade_intro_text(self.quote))
+        self.app.after(2500, self.setup_ui)
+        self.app.mainloop()
 
-        raw_input = active_calculator.main_display.get()
-        cleaned_input = SmartEntry.refine_input(raw_input)
+    def handle_press(self, key):
+        if "ERROR:" in self.app.main_display.get():
+            self.app.main_display.delete(0, 'end')
 
-        active_calculator.main_display.delete(0, tkinter_library.END)
-        active_calculator.main_display.insert(0, cleaned_input)
-
-        calculation_data = active_calculator.execute_safe_calculation()
-
-        if calculation_data[0] is not None:
-            user_input = calculation_data[0]
-            math_result = calculation_data[1]
-
-            history_string = f'{user_input} = {math_result}'
-            session_history.save_to_library(history_string)
-    
-    solve_button = tkinter_library.Button(
-        active_calculator,
-        text=15,
-        width=2,
-        background='#3498db',
-        foreground='white',
-        command=handle_calculation_process
-    )
-    solve_button.pack(pady=30)
-
-    def attempt_exit_or_reset():
-        user_choice = messagebox.askyesno('Aki Calculator', 'Do you want to perform another calculation?')
-        if user_choice:
-            active_calculator.main_display.delete(0, tkinter_library.END)
+        if key == "=":
+            eq, res = self.app.execute_safe_calculation()
+            if eq != "Error": self.history_logs.append(f"{eq} = {res}")
+        elif key == "C": 
+            self.app.main_display.delete(0, 'end')
+        elif key == "History": 
+            CalculatorUI.draw_history_view(self.app, self.history_logs, self.handle_press)
+        elif key == "Back": 
+            CalculatorUI.draw_basic_mode(self.app, self.handle_press)
+        elif "→" in key:
+            eq, res = LogicEngine.perform_conversion(self.app, key)
+            if eq != "Error": self.history_logs.append(f"{eq} -> {res}")
         else:
-            print('Thank you for using my calculator! Program Exiting BYEEE...')
+            self.app.main_display.insert(tkinter_library.END, key)
 
-    active_calculator.protocol('DELETE_WINDOW', attempt_exit_or_reset)
-    active_calculator.mainloop()
+    def setup_ui(self):
+        nav = tkinter_library.Frame(self.app, bg="#2c3e50")
+        nav.pack(fill='x', pady=5)
+        for t, c in [("MODE", self.rotate), ("FRAC", self.frac), ("DEC", self.dec)]:
+            tkinter_library.Button(nav, text=t, font=("Arial", 9, "bold"), command=c).pack(side="left", padx=5)
+        CalculatorUI.draw_basic_mode(self.app, self.handle_press)
 
-if __name__ == '__main__':
-    run_calculator_app()
+    def rotate(self):
+        self.idx = (self.idx + 1) % len(self.modes)
+        m = self.modes[self.idx]
+        if m == "Basic": CalculatorUI.draw_basic_mode(self.app, self.handle_press)
+        elif m == "Advanced": CalculatorUI.draw_advanced_mode(self.app, self.handle_press)
+        elif m == "Units": CalculatorUI.draw_unit_mode(self.app, self.handle_press)
+        elif m == "Currency": CalculatorUI.draw_currency_mode(self.app, self.handle_press)
+        elif m == "Time": CalculatorUI.draw_time_mode(self.app, self.handle_press)
+
+    def frac(self):
+        from fractions import Fraction
+        try:
+            v = float(self.app.main_display.get())
+            self.app.main_display.delete(0, 'end'); self.app.main_display.insert(0, str(Fraction(v).limit_denominator()))
+        except: pass
+
+    def dec(self):
+        from fractions import Fraction
+        try:
+            v = self.app.main_display.get()
+            self.app.main_display.delete(0, 'end'); self.app.main_display.insert(0, str(float(Fraction(v))))
+        except: pass
+
+if __name__ == "__main__":
+    CalculatorApp()
