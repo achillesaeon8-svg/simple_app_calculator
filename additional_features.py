@@ -65,6 +65,18 @@ class DailyQuotes:
       'The good thing about science is that it\'s true whether or not you believe in it.',
       'A man who dares to waste one hour of time has not discovered the value of life.',
       'Science knows no country, because knowledge belongs to humanity.',
+
+      'Inherited Will, The Destiny of the Age, and The Dreams of the People. As long as people continue to pursue the meaning of Freedom, these things will never cease!',
+      'When do you think people die? When they are shot by a pistol? No. It’s when they are forgotten.',
+      'Scars on the back are a swordsman\'s shame.',
+      'Being alone is more painful than getting hurt.',
+      'Pirates are evil? Marines are righteous? These terms have always changed throughout the course of history!',
+      'I don\'t want to conquer anything. I just think that the guy with the most freedom in this whole ocean is the Pirate King!',
+      'No matter how hard or how impossible it is, never lose sight of your goal.',
+      'A man\'s dream will never die!',
+      'I want to live!',
+      'Thanks... for loving me!',
+
     ]
 
 class MultiColor:
