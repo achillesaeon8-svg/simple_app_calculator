@@ -41,4 +41,22 @@ class FundamentalOperations(tkinter_library.Tk):
             self.update_display('Error: Invalid Input')
             return 'Error', 'Invalid'
         
-    def
+    def update_display(self, text):
+        self.main_display.delete(0, 'end')
+        self.main_display.insert(0, text)
+
+    def exit_sequence(self):
+        for widget in self.winfo_children():
+            widget.destroy()
+        bye_label = tkinter_library.Label(self, text='Thank you for using my calculator! BYEEE', font=('Arial', 24, 'bold'), background='#2c3e50', foreground='white')
+
+        bye_label.pack(expand=True)
+        self.fade_exit(bye_label)
+
+    def fade_exit(self, label, step=0):
+        colors = ['#ffffff', '#dfe6e9', '#b2bec3', '#95a5a6', '#636e72', '#2c3e50']
+        if step < len(colors):
+            label.config(foreground=colors[step])
+            self.after(200, lambda: self.fade_exit(label, step + 1))
+        else:
+            self.destroy()
