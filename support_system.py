@@ -24,7 +24,7 @@ class ConversionRates:
       result = value * rates.get(key, 1)
       formatted = f'{result:.4f}'.rstrip('0').rstrip('.')
       app.main_display.delete(0, 'end')
-      app.main_display.insert(0, formmatted)
+      app.main_display.insert(0, formatted)
       return f'{value_string} ({key})', formatted
     except:
       app.update_display('Error: Input Number')
