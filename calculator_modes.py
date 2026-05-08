@@ -6,10 +6,12 @@ class AdvancedMath:
 
 class TimeCalculator:
   def __init__(self):
-      super().__init__(window_title='Advanced Mode', background_color='8e44ad')
+    super().__init__(window_title='Advanced Mode', background_color='8e44ad')
+
 class UnitConverter:
   def __init__(self):
-      super().__init__(window_title='Advanced Mode', background_color='8e44ad')
+    super().__init__(window_title='Advanced Mode', background_color='8e44ad')
+    
 class CurrencyConverter:
   def __init__(self):
-      super().__init__(window_title='Advanced Mode', background_color='8e44ad')
+    super().__init__(window_title='Advanced Mode', background_color='8e44ad')
