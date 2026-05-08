@@ -15,4 +15,8 @@ class ConversionRates:
         'm→cm': 100, 'cm→m': 0.01,
         'km→m': 1000, 'm→km': 0.001,
         'lb→kg': 0.4535, 'kg→lb': 2.2046,
+
+        'hr→min': 60, 'min→hr': 1/60,
+        'min→sec': 60, 'sec→min': 1/60,
+        'day→hr': 24, 'hr→day': 1/24
       }
