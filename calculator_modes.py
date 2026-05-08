@@ -25,4 +25,26 @@ class CalculatorUI(FundamentalOperations):
       app.button_frame.rowconfigure(r, weight=1)
 
   @staticmethod
-  def
+  def draw_basic_mode(app, controller):
+    keys = ['C', '(', ')', '÷', '7', '8', '9', '×', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '=']
+    CalculatorUI.draw_full_grid(app, keys, controller)
+  
+  @staticmethod
+  def draw_advanced_mode(app, controller):
+    keys = ['sin', 'cos', 'tan', 'log', '√', 'x²', '(', ')', '7', '8', '9', '÷', '4', '5', '6', '×', '1', '2', '3', '-', '0', 'π', 'C', 'History', '=']
+    CalculatorUI.draw_full_grid(app, keys, controller, columns=5, color="#8e44ad")
+
+  @staticmethod
+  def draw_unit_mode(app, controller):
+    keys = ['kg→g', 'g→kg', 'm→cm', 'cm→m', '7', '8', '9', 'C', '4', '5', '6', 'km→m', '1', '2', '3', 'm→km', '0', 'lb→kg', 'kg→lb']
+    CalculatorUI.draw_full_grid(app, keys, controller, columns=4, color="#2980b9")
+
+  @staticmethod
+  def draw_currency_mode(app, controller):
+    keys = ['$→₱', '₱→$', 'KRW→₱', '₱→KRW', '7', '8', '9', 'C', '4', '5', '6', '¥→₱', '1', '2', '3', '₱→¥', '0', '€→₱', '₱→€']
+    CalculatorUI.draw_full_grid(app, keys, controller, columns=4, color="#d35400")
+
+  @staticmethod
+  def draw_time_mode(app, controller):
+    keys = ['hr→min', 'min→hr', 'min→sec', 'sec→min', '7', '8', '9', 'C', '4', '5', '6', 'day→hr', '1', '2', '3', 'hr→day', '0', '.']
+    CalculatorUI.draw_full_grid(app, keys, controller, columns=4, color="#27ae60")
