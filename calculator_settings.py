@@ -1,4 +1,4 @@
-import tkinter as tkiner_library
+import tkinter as tkinter_library
 from tkinter import messagebox
 import math
 
