@@ -1,8 +1,15 @@
+from calculator_settings import FundamentalOperations
+
 class AdvancedMath:
-  pass
+  def __init__(self):
+    super().__init__(window_title='Advanced Mode', background_color='8e44ad')
+
 class TimeCalculator:
-  pass
+  def __init__(self):
+      super().__init__(window_title='Advanced Mode', background_color='8e44ad')
 class UnitConverter:
-  pass
+  def __init__(self):
+      super().__init__(window_title='Advanced Mode', background_color='8e44ad')
 class CurrencyConverter:
-  pass
+  def __init__(self):
+      super().__init__(window_title='Advanced Mode', background_color='8e44ad')
