@@ -3,7 +3,7 @@ import random
 class DailyQuotes:
   @staticmethod
   def get_random_quote():
-    quote_list = [
+    return random.choice([
       'Veni, vidi, vici.',
       'Et tu, Brute?',
       'The best revenge is to be unlike him who performed the injury.',
@@ -111,13 +111,4 @@ class DailyQuotes:
       'He who has a why to live can bear almost any how.',
       'Life is what happens when you\'re busy making other plans.',
       'Man is born free, and everywhere he is in chains.',
-    ]
-    return random.choice(quote_list)
-  
-class MultiColor:
-  pass
-
-class SoundBoard:
-  @staticmethod
-  def trigger_click_sound():
-    print('[SYSTEM]: Mechanical Switch Sound Triggered.')
+    ])
