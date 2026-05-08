@@ -116,5 +116,8 @@ class DailyQuotes:
   
 class MultiColor:
   pass
+
 class SoundBoard:
-  pass
+  @staticmethod
+  def trigger_click_sound():
+    print('[SYSTEM]: Mechanical Switch Sound Triggered.')
