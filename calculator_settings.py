@@ -28,6 +28,6 @@ class FundamentalOperations(tkinter_library.Tk):
             return input_string, calculation_result
         except ZeroDivisionError:
             messagebox.showerror('Math Error', 'Cannot divide by zero.')
-        except Exception as ErrorMessage:
+        except Exception as error_message:
             messagebox.showerror('Error', f'invalid input: {error_message}')
             return None, None
