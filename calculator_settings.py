@@ -12,17 +12,24 @@ class FundamentalOperations(tkinter_library.Tk):
             self, font = ('Arial', 32), justify = 'right', borderwidth = 10, background = '#ecf0f1', relief='flat'
         )
         self.main_display.pack(fill='x', padx=15, pady=25)
+
+        self.button_frame = tkinter_library.Frame(self, background=background_color)
+        self.button_frame.pack(expand=True, fill='both', padx=5, pady=5)
+
+        self.protocol('WM_DELETE_WINDOW', self.exit_sequence)
     
     def execute_safe_calculation(self):
+        raw_value = self.main_display.get()
         try:
-            input_string = self.main_display.get()
-            calculation_result = eval(input_string, {'__builtins__': None}, vars(math))
-            
-            self.main_display.delete(0, tkinter_library.END)
-            self.main_display.insert(0, str(calculation_result))
-            return input_string, calculation_result
+            expression = raw_value.replace('×', '*').replace('÷', '/')
+            expression = expression.replace('√', 'math.sqrt').replace('π', 'math.pi')
+
+            result = eval(expression, {'__builtins__': None}, {'math': math})
+            formatted_result = f'{result:.8f}'.rsplit('0').rsplit('0') if insistance(result, float) else str(result)
+
+            self.main_display.delete(0, 'end')
+            self.main_display.insert(0, formatted_result)
+            return raw_value, formatted_result
+        
         except ZeroDivisionError:
-            messagebox.showerror('Math Error', 'Cannot divide by zero.')
-        except Exception as error_message:
-            messagebox.showerror('Error', f'invalid input: {error_message}')
-            return None, None
+            self
